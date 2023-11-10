@@ -1,4 +1,3 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
@@ -9,6 +8,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoSearchTests", "PhotoSe
 	ProjectSection(ProjectDependencies) = postProject
 		{A7F1B21A-BCB3-42CC-A04D-398C0D19CDD5} = {A7F1B21A-BCB3-42CC-A04D-398C0D19CDD5}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoSearchApp", "PhotoSearchApp\PhotoSearchApp.csproj", "{03F5D973-3CE8-4726-A1AC-1A5E337928C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +25,10 @@ Global
 		{678F18DC-0ACA-485E-88F8-7D1E56F3995D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{678F18DC-0ACA-485E-88F8-7D1E56F3995D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{678F18DC-0ACA-485E-88F8-7D1E56F3995D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03F5D973-3CE8-4726-A1AC-1A5E337928C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03F5D973-3CE8-4726-A1AC-1A5E337928C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03F5D973-3CE8-4726-A1AC-1A5E337928C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03F5D973-3CE8-4726-A1AC-1A5E337928C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

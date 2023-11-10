@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 
 namespace PhotoSearch
 {
+    // album 1 = 50
     public class Photos
     {       
         private static string json =
