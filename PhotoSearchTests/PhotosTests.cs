@@ -4,22 +4,22 @@ using PhotoSearch;
 namespace PhotoSearchTests
 {
     [TestClass]
-    public class PhotoDataTests
+    public class PhotosTests
     {
         [TestMethod]
         public void ShouldContain5000Photos()
         {
-            PhotoData photoData = new PhotoData();
+            Photos photos = new Photos();
 
-            photoData.NumberOfPhotos().Should().Be(5000);
+            photos.NumberOfPhotos().Should().Be(5000);
         }
 
         [TestMethod]
         public void ShouldContain100Albums()
         {
-            PhotoData photoData = new PhotoData();
+            Photos photos = new Photos();
 
-            photoData.NumberOfAlbums().Should().Be(100);
+            photos.NumberOfAlbums().Should().Be(100);
         }
 
         [TestMethod]
@@ -27,9 +27,9 @@ namespace PhotoSearchTests
         [DataRow(54, "[54] ut ex quibusdam dolore mollitia")]
         public void ShouldReturnPhotoGivenId(int id, string expected)
         {
-            PhotoData photoData = new PhotoData();
+            Photos photos = new Photos();
 
-            Photo photo = photoData.GetPhotoById(id);
+            Photo photo = photos.GetPhotoById(id);
 
             photo.id.Should().Be(id);
             photo.ExportString().Should().Be(expected);

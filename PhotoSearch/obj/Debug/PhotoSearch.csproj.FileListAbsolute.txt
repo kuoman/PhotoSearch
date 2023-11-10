@@ -1,2 +1,0 @@
-D:\Development\C-Sharp\PhotoSearch\PhotoSearch\obj\Debug\PhotoSearch.csproj.AssemblyReference.cache
-D:\Development\C-Sharp\PhotoSearch\PhotoSearch\obj\Debug\PhotoSearch.csproj.CoreCompileInputs.cache

@@ -5,9 +5,9 @@ namespace PhotoSearch
         public string GetPhoto(int photoId)
         {
 
-            PhotoData photoData = new PhotoData();
+            Photos photos = new Photos();
 
-            Photo photo = photoData.GetPhotoById(photoId);
+            Photo photo = photos.GetPhotoById(photoId);
 
             return photo.ExportString();
         }
