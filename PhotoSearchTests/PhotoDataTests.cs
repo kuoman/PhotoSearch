@@ -32,7 +32,7 @@ namespace PhotoSearchTests
             Photo photo = photoData.GetPhotoById(id);
 
             photo.id.Should().Be(id);
-            photo.url.Should().Be(expected);
+            photo.ExportString().Should().Be(expected);
         }
 
     }

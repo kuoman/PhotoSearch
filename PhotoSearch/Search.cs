@@ -4,8 +4,12 @@ namespace PhotoSearch
     {
         public string GetPhoto(int photoId)
         {
-            if (photoId == 54) return "[54] ut ex quibusdam dolore mollitia";
-            return "[53] soluta et harum aliquid officiis ab omnis consequatur";
+
+            PhotoData photoData = new PhotoData();
+
+            Photo photo = photoData.GetPhotoById(photoId);
+
+            return photo.ExportString();
         }
     }
 }
