@@ -1,11 +1,14 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoSearch", "PhotoSearch\PhotoSearch.csproj", "{A7F1B21A-BCB3-42CC-A04D-398C0D19CDD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoSearch", "PhotoSearch\PhotoSearch.csproj", "{A7F1B21A-BCB3-42CC-A04D-398C0D19CDD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoSearchTests", "PhotoSearchTests\PhotoSearchTests.csproj", "{678F18DC-0ACA-485E-88F8-7D1E56F3995D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoSearchTests", "PhotoSearchTests\PhotoSearchTests.csproj", "{678F18DC-0ACA-485E-88F8-7D1E56F3995D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A7F1B21A-BCB3-42CC-A04D-398C0D19CDD5} = {A7F1B21A-BCB3-42CC-A04D-398C0D19CDD5}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

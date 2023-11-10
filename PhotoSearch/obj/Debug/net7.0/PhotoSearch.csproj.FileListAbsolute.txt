@@ -1,0 +1,10 @@
+D:\Development\C-Sharp\PhotoSearch\PhotoSearch\obj\Debug\net7.0\PhotoSearch.csproj.AssemblyReference.cache
+D:\Development\C-Sharp\PhotoSearch\PhotoSearch\obj\Debug\net7.0\PhotoSearch.GeneratedMSBuildEditorConfig.editorconfig
+D:\Development\C-Sharp\PhotoSearch\PhotoSearch\obj\Debug\net7.0\PhotoSearch.csproj.CoreCompileInputs.cache
+D:\Development\C-Sharp\PhotoSearch\PhotoSearch\bin\Debug\net7.0\PhotoSearch.deps.json
+D:\Development\C-Sharp\PhotoSearch\PhotoSearch\bin\Debug\net7.0\PhotoSearch.dll
+D:\Development\C-Sharp\PhotoSearch\PhotoSearch\bin\Debug\net7.0\PhotoSearch.pdb
+D:\Development\C-Sharp\PhotoSearch\PhotoSearch\obj\Debug\net7.0\PhotoSearch.dll
+D:\Development\C-Sharp\PhotoSearch\PhotoSearch\obj\Debug\net7.0\refint\PhotoSearch.dll
+D:\Development\C-Sharp\PhotoSearch\PhotoSearch\obj\Debug\net7.0\PhotoSearch.pdb
+D:\Development\C-Sharp\PhotoSearch\PhotoSearch\obj\Debug\net7.0\ref\PhotoSearch.dll
