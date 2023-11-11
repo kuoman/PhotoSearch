@@ -18,5 +18,16 @@ namespace SearchTests
 
             photoData.Should().Be(expected);
         }
+
+        [TestMethod]
+        public void ShouldGetPhotoStringFromRawInput()
+        {
+            Search search = new Search();
+
+            string outputString = search.GetPhotoOrAlbum("p53");
+
+            outputString.Should().Be("[53] soluta et harum aliquid officiis ab omnis consequatur");
+
+        }
     }
 }

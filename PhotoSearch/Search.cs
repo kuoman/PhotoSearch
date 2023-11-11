@@ -10,5 +10,11 @@ namespace PhotoSearch
 
             return photo.ExportString();
         }
+
+        public string GetPhotoOrAlbum(string input)
+        {
+            string trimmedInput = input.Substring(1);
+            return GetPhoto(int.Parse(trimmedInput));
+        }
     }
 }

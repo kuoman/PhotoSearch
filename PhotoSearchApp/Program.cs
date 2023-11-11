@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
 using PhotoSearch;
 
 class Program
@@ -24,23 +25,37 @@ class Program
                 Console.WriteLine("Input not understood, try agian.");
             }
 
-            if (input.Trim().ToLower() == "x")
+            input = input.Trim().ToLower();
+
+            if (input == "x")
             {
                 Environment.Exit(0);
             }  
-            else if (input.ToLower() == "x")
+            else if (input == "x")
             {
                 endApp = true;
             }
-            else if (input.Trim().ToLower().StartsWith("a") || input.Trim().ToLower().StartsWith("p"))
+            else if (input.StartsWith("a") || input.Trim().ToLower().StartsWith("p"))
             {
-                // make call with input
-                new Search();
+                int result = 0;
+
+                if (int.TryParse(input.Substring(1), out result))
+                {
+                    Search search = new Search();
+                    Console.WriteLine(search.GetPhotoOrAlbum(input));
+                }
+                else
+                {
+                    Console.WriteLine("Input not understood, try again.");
+                }
+
             }
             else
             {
                 Console.WriteLine("Input not understood, try again.");
             }
+
+            Console.WriteLine("------------------------\n");
         }
     }
 }
