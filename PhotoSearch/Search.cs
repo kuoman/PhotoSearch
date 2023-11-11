@@ -4,7 +4,6 @@ namespace PhotoSearch
     {
         public string GetPhoto(int photoId)
         {
-
             Photos photos = new Photos();
 
             Photo photo = photos.GetPhotoById(photoId);

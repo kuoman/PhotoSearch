@@ -1,11 +1,46 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using System.Net.Mime;
+using System.Runtime.InteropServices;
+using PhotoSearch;
 
-Console.WriteLine("Hello, World!");
+class Program
+{
+    static void Main(string[] args)
+    {
+        bool endApp = false;
 
-Console.WriteLine("To exit type (x)");
+        while (!endApp)
+        {
+            Console.WriteLine("Welcome to the Search Photo.");
 
-string input = Console.ReadLine();
+            Console.WriteLine("Enter A for album list or P for photo followed by the appropriate ID:");
 
-if (input.ToLower()== "x") Environment.Exit(0);
+            Console.WriteLine("To exit type (x)");
+
+            string input = Console.ReadLine();
+
+            if (string.IsNullOrEmpty(input))
+            {
+                Console.WriteLine("Input not understood, try agian.");
+            }
+
+            if (input.Trim().ToLower() == "x")
+            {
+                Environment.Exit(0);
+            }  
+            else if (input.ToLower() == "x")
+            {
+                endApp = true;
+            }
+            else if (input.Trim().ToLower().StartsWith("a") || input.Trim().ToLower().StartsWith("p"))
+            {
+                // make call with input
+                new Search();
+            }
+            else
+            {
+                Console.WriteLine("Input not understood, try again.");
+            }
+        }
+    }
+}
