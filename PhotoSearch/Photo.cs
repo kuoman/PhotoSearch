@@ -1,6 +1,11 @@
 ﻿namespace PhotoSearch
 {
-    public record Photo (int albumId, int id, string title, string url, string thumbnailUrl)
+    public interface IPhoto
+    {
+        string ExportString();
+    }
+
+    public record Photo (int albumId, int id, string title, string url, string thumbnailUrl) : IPhoto
     {
         public string ExportString()
         {

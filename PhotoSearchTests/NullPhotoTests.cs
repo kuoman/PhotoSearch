@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentAssertions;
+using PhotoSearch;
 
 namespace PhotoSearchTests
 {
-    internal class NullPhotoTests
+    [TestClass]
+    public class NullPhotoTests
     {
+        [TestMethod]
+        public void ShouldReturnNotFoundExportString()
+        {
+            IPhoto nullPhoto = new NullPhoto();
+
+            nullPhoto.ExportString().Should().Be("Photo not found");
+        }
     }
 }
