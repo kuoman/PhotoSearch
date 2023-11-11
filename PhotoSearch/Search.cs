@@ -15,7 +15,11 @@ namespace PhotoSearch
         {
             if (input.StartsWith("a"))
             {
-                return "photo-album 3";
+                Photos photos = new Photos();
+
+                string trimmedAlbumInput = input.Substring(1);
+
+                return photos.GetAlbumBy(int.Parse(trimmedAlbumInput));
             }
 
             string trimmedInput = input.Substring(1);

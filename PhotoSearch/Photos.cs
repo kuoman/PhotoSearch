@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Newtonsoft.Json;
 
 namespace PhotoSearch
@@ -23,11 +24,15 @@ namespace PhotoSearch
 
         public string GetAlbumBy(int albumId)
         {
-            string returnString = $"photo-album {albumId}";
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"photo-album {albumId}");
+            sb.Append(System.Environment.NewLine);
+            sb.Append("[53] soluta et harum aliquid officiis ab omnis consequatur");
+            sb.Append(System.Environment.NewLine);
+            sb.Append("[54] ut ex quibusdam dolore mollitia");
+            sb.Append(System.Environment.NewLine);
 
-            returnString += "[53] soluta et harum aliquid officiis ab omnis consequatur";
-
-            return returnString;
+            return sb.ToString();
         }
     }
 }

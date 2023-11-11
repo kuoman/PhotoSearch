@@ -22,6 +22,7 @@ namespace PhotoSearchTests
         [TestMethod]
         [DataRow(3, "photo-album 3")]
         [DataRow(2, "[53] soluta et harum aliquid officiis ab omnis consequatur")]
+        [DataRow(54, "[54] ut ex quibusdam dolore mollitia")]
         public void ShouldReturnGivenAlbumById(int albumId, string containsString)
         {
             Photos photos = new Photos();

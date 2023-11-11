@@ -36,7 +36,7 @@ namespace SearchTests
 
             string outputString = search.GetPhotoOrAlbum("a3");
 
-            outputString.Should().Be("photo-album 3");
+            outputString.Should().Contain("photo-album 3");
         }
     }
 }
