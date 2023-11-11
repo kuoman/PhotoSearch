@@ -18,5 +18,16 @@ namespace PhotoSearchTests
 
             photo.ExportString().Should().Be(expected);
         }
+
+        [TestMethod]
+        [DataRow(3, "photo-album 3")]
+        public void ShouldReturnGivenAlbumById(int albumId, string containsString)
+        {
+            Photos photos = new Photos();
+
+            string exportString = photos.GetAlbumBy(albumId);
+
+            exportString.Should().Contain(containsString);
+        }
     }
 }

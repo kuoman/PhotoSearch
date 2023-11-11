@@ -15,9 +15,15 @@ namespace PhotoSearch
         public IPhoto GetPhotoById(int id)
         {
             Photo firstPhoto = photos.FirstOrDefault(x => x.HasId(id)); 
+            
             if (firstPhoto == null) return new NullPhoto();
            
             return firstPhoto;
+        }
+
+        public string GetAlbumBy(int albumId)
+        {
+            return $"photo-album {albumId}";
         }
     }
 }
