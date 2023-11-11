@@ -12,19 +12,12 @@ namespace PhotoSearch
 
         List<Photo>? photos = JsonConvert.DeserializeObject<List<Photo>>(json);
         
-        public int NumberOfPhotos()
+        public IPhoto GetPhotoById(int id)
         {
-            return photos.Count;
-        }
-
-        public int NumberOfAlbums()
-        {
-            return photos.DistinctBy(x => x.albumId).Count();
-        }
-
-        public Photo GetPhotoById(int id)
-        {
-            return photos.FirstOrDefault(x => x.id == id);
+            Photo firstPhoto = photos.FirstOrDefault(x => x.HasId(id)); 
+            if (firstPhoto == null) return new NullPhoto();
+           
+            return firstPhoto;
         }
     }
 }

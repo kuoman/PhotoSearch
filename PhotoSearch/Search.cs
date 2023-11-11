@@ -6,7 +6,7 @@ namespace PhotoSearch
         {
             Photos photos = new Photos();
 
-            Photo photo = photos.GetPhotoById(photoId);
+            IPhoto photo = photos.GetPhotoById(photoId);
 
             return photo.ExportString();
         }
