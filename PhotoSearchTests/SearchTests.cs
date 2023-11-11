@@ -27,7 +27,16 @@ namespace SearchTests
             string outputString = search.GetPhotoOrAlbum("p53");
 
             outputString.Should().Be("[53] soluta et harum aliquid officiis ab omnis consequatur");
+        }
 
+        [TestMethod]
+        public void ShouldGetPhotoAlbumName()
+        {
+            Search search = new Search();
+
+            string outputString = search.GetPhotoOrAlbum("a3");
+
+            outputString.Should().Be("photo-album 3");
         }
     }
 }

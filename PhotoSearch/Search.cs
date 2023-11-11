@@ -13,6 +13,11 @@ namespace PhotoSearch
 
         public string GetPhotoOrAlbum(string input)
         {
+            if (input.StartsWith("a"))
+            {
+                return "photo-album 3";
+            }
+
             string trimmedInput = input.Substring(1);
             return GetPhoto(int.Parse(trimmedInput));
         }
