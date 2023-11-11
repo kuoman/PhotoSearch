@@ -23,7 +23,11 @@ namespace PhotoSearch
 
         public string GetAlbumBy(int albumId)
         {
-            return $"photo-album {albumId}";
+            string returnString = $"photo-album {albumId}";
+
+            returnString += "[53] soluta et harum aliquid officiis ab omnis consequatur";
+
+            return returnString;
         }
     }
 }
