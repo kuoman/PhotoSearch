@@ -28,12 +28,39 @@ namespace PhotoSearchTests
             actual.Should().Contain("[53] soluta et harum aliquid officiis ab omnis consequatur");
             actual.Should().Contain("[54] ut ex quibusdam dolore mollitia");
         }
+
+        [TestMethod]
+        public void ShouldHandleNullAlbum()
+        {
+            int albumId = 2;
+
+            Album album = new Album(albumId, null);
+
+            string actual = album.ExportString();
+
+            actual.Should().Contain($"Album {albumId} not found");
+        }
+
+        [TestMethod]
+        public void ShouldHandleEmptyAlbumGracefully()
+        {
+            int albumId = 2;
+
+            Album album = new Album(albumId, new List<Photo>());
+
+            string actual = album.ExportString();
+
+            actual.Should().Contain($"No photos in Album {albumId}");
+        }
     }
 
     public record Album(int AlbumId, List<Photo> albumPhotos)
     {
         public string ExportString()
         {
+            if (albumPhotos == null) return $"Album {AlbumId} not found";
+            if (albumPhotos.Count == 0) return $"No photos in Album {AlbumId}";
+
             StringBuilder sb = new StringBuilder();
             sb.Append($"photo-album {AlbumId}");
 
