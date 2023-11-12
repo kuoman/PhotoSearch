@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace PhotoSearch
 {
     public record Search
@@ -8,7 +10,9 @@ namespace PhotoSearch
 
             IPhoto photo = photos.GetPhotoById(photoId);
 
-            return photo.ExportString();
+            StringBuilder stringBuilder = new StringBuilder();
+
+            return photo.ExportString(stringBuilder).ToString();
         }
 
         public string GetPhotoOrAlbum(string input)

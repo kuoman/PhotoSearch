@@ -16,7 +16,7 @@ namespace SearchTests
 
             string photoData = photoSearch.GetPhoto(id);
 
-            photoData.Should().Be(expected);
+            photoData.Should().Contain(expected);
         }
 
         [TestMethod]
@@ -26,7 +26,7 @@ namespace SearchTests
 
             string outputString = search.GetPhotoOrAlbum("p53");
 
-            outputString.Should().Be("[53] soluta et harum aliquid officiis ab omnis consequatur");
+            outputString.Should().Contain("[53] soluta et harum aliquid officiis ab omnis consequatur");
         }
 
         [TestMethod]

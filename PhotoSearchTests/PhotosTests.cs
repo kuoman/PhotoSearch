@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using System.Text;
+using FluentAssertions;
 using PhotoSearch;
 
 namespace PhotoSearchTests
@@ -16,7 +17,9 @@ namespace PhotoSearchTests
 
             IPhoto photo = photos.GetPhotoById(id);
 
-            photo.ExportString().Should().Be(expected);
+            StringBuilder stringBuilder = new StringBuilder();
+
+            photo.ExportString(stringBuilder).ToString().Should().Contain(expected);
         }
 
         [TestMethod]

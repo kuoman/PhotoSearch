@@ -16,13 +16,15 @@ namespace PhotoSearchTests
 
             List<Photo>? photos = JsonConvert.DeserializeObject<List<Photo>>(json);
 
-            List<Photo> album3Pictures = photos.Where(x => x.albumId == 2).ToList();
+            int albumId = 2;
 
-            Album album = new Album(3, album3Pictures);
+            List<Photo> album3Pictures = photos.Where(x => x.albumId == albumId).ToList();
+
+            Album album = new Album(albumId, album3Pictures);
 
             string actual = album.ExportString();
 
-            actual.Should().Contain("photo-album 2");
+            actual.Should().Contain($"photo-album {albumId}");
             actual.Should().Contain("[53] soluta et harum aliquid officiis ab omnis consequatur");
             actual.Should().Contain("[54] ut ex quibusdam dolore mollitia");
         }
@@ -37,8 +39,7 @@ namespace PhotoSearchTests
 
             foreach (Photo photo in albumPhotos)
             {
-                sb.Append(photo.ExportString());
-                sb.Append(Environment.NewLine);
+                photo.ExportString(sb);
             }
 
             return sb.ToString();

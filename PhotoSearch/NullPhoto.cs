@@ -1,10 +1,12 @@
-﻿namespace PhotoSearch;
+﻿using System.Text;
+
+namespace PhotoSearch;
 
 public class NullPhoto : IPhoto
 {
-    public string ExportString()
+    public StringBuilder ExportString(StringBuilder stringBuilder)
     {
-        return "Photo not found";
+        return stringBuilder.Append("Photo not found");
     }
 
     public bool HasId(int inputId)

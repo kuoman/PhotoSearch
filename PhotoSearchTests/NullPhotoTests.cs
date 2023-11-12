@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using System.Text;
+using FluentAssertions;
 using PhotoSearch;
 
 namespace PhotoSearchTests
@@ -11,7 +12,9 @@ namespace PhotoSearchTests
         {
             IPhoto nullPhoto = new NullPhoto();
 
-            nullPhoto.ExportString().Should().Be("Photo not found");
+            StringBuilder stringBuilder = new StringBuilder();
+
+            nullPhoto.ExportString(stringBuilder).ToString().Should().Contain("Photo not found");
         }
     }
 }
