@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization.Formatters;
-
-namespace PhotoSearch
+﻿namespace PhotoSearch
 {
     public interface IPhoto
     {
