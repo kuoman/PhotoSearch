@@ -14,7 +14,7 @@ namespace PhotoSearchTests
         [TestMethod]
         public void ShouldCreateProperExportString()
         {
-            Photo photo = new Photo(1, 1, "a", "b", "c");
+            IPhoto photo = new Photo(1, 1, "a", "b", "c");
 
             photo.ExportString().Should().Be("[1] a");
         }
@@ -22,7 +22,7 @@ namespace PhotoSearchTests
         [TestMethod]
         public void ShouldBeTrueIfCorrectPhotoId()
         {
-            Photo photo = new Photo(1, 1, "a", "b", "c");
+            IPhoto photo = new Photo(1, 1, "a", "b", "c");
 
             photo.HasId(1).Should().BeTrue();
         }
@@ -30,7 +30,7 @@ namespace PhotoSearchTests
         [TestMethod]
         public void ShouldBeFalseIfIncorrectPhotoId()
         {
-            Photo photo = new Photo(1, 1, "a", "b", "c");
+            IPhoto photo = new Photo(1, 1, "a", "b", "c");
 
             photo.HasId(2).Should().BeFalse();
         }
@@ -38,7 +38,7 @@ namespace PhotoSearchTests
         [TestMethod]
         public void ShouldBeTrueIfCorrectAlbumId()
         {
-            Photo photo = new Photo(1, 1, "a", "b", "c");
+            IPhoto photo = new Photo(1, 1, "a", "b", "c");
 
             photo.HasAlbumId(1).Should().BeTrue();
         }
@@ -46,7 +46,7 @@ namespace PhotoSearchTests
         [TestMethod]
         public void ShouldBeFalseIfIncorrectAlbumId()
         {
-            Photo photo = new Photo(1, 1, "a", "b", "c");
+            IPhoto photo = new Photo(1, 1, "a", "b", "c");
 
             photo.HasAlbumId(2).Should().BeFalse();
         }
