@@ -24,15 +24,9 @@ namespace PhotoSearch
 
         public string GetAlbumBy(int albumId)
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append($"photo-album {albumId}");
-            sb.Append(System.Environment.NewLine);
-            sb.Append("[53] soluta et harum aliquid officiis ab omnis consequatur");
-            sb.Append(System.Environment.NewLine);
-            sb.Append("[54] ut ex quibusdam dolore mollitia");
-            sb.Append(System.Environment.NewLine);
+            Album album = new Album(albumId, photos.Where(x => x.albumId == albumId).ToList());
 
-            return sb.ToString();
+            return album.ExportString();
         }
     }
 }
