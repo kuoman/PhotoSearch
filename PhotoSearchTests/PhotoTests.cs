@@ -7,46 +7,44 @@ namespace PhotoSearchTests
     [TestClass]
     public class PhotoTests
     {
+        private IPhoto _photo;
+
+        [TestInitialize]
+        public void Initialize()
+        {
+            _photo = new Photo(1, 1, "a", "b", "c");
+        }
+
         [TestMethod]
         public void ShouldCreateProperExportString()
         {
-            IPhoto photo = new Photo(1, 1, "a", "b", "c");
-
             StringBuilder sb = new StringBuilder();
 
-            photo.ExportString(sb).ToString().Should().Contain("[1] a");
+            _photo.ExportString(sb).ToString().Should().Contain("[1] a");
         }
 
         [TestMethod]
         public void ShouldBeTrueIfCorrectPhotoId()
         {
-            IPhoto photo = new Photo(1, 1, "a", "b", "c");
-
-            photo.HasId(1).Should().BeTrue();
+            _photo.HasId(1).Should().BeTrue();
         }
 
         [TestMethod]
         public void ShouldBeFalseIfIncorrectPhotoId()
         {
-            IPhoto photo = new Photo(1, 1, "a", "b", "c");
-
-            photo.HasId(2).Should().BeFalse();
+            _photo.HasId(2).Should().BeFalse();
         }
 
         [TestMethod]
         public void ShouldBeTrueIfCorrectAlbumId()
         {
-            IPhoto photo = new Photo(1, 1, "a", "b", "c");
-
-            photo.HasAlbumId(1).Should().BeTrue();
+            _photo.HasAlbumId(1).Should().BeTrue();
         }
 
         [TestMethod]
         public void ShouldBeFalseIfIncorrectAlbumId()
         {
-            IPhoto photo = new Photo(1, 1, "a", "b", "c");
-
-            photo.HasAlbumId(2).Should().BeFalse();
+            _photo.HasAlbumId(2).Should().BeFalse();
         }
     }
 }
