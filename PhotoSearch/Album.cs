@@ -13,10 +13,7 @@ public record Album(int AlbumId, List<Photo> albumPhotos)
         StringBuilder sb = new StringBuilder();
         sb.Append($"photo-album {AlbumId}");
 
-        foreach (Photo photo in albumPhotos)
-        {
-            photo.ExportString(sb);
-        }
+        albumPhotos.ForEach(x => x.ExportString(sb));
 
         return sb.ToString();
     }
