@@ -7,14 +7,20 @@ namespace SearchTests
     [TestClass]
     public class SearchTests
     {
+        private Search _search;
+
+        [TestInitialize]
+        public void Initialize()
+        {
+            _search = new Search();
+        }
+
         [TestMethod]
         [DataRow(53, "[53] soluta et harum aliquid officiis ab omnis consequatur")]
         [DataRow(54, "[54] ut ex quibusdam dolore mollitia")]
         public void ShouldReturnPhotoGivenId(int id, string expected)
         {
-            Search photoSearch = new Search();
-
-            string photoData = photoSearch.GetPhoto(id);
+            string photoData = _search.GetPhoto(id);
 
             photoData.Should().Contain(expected);
         }
@@ -22,9 +28,7 @@ namespace SearchTests
         [TestMethod]
         public void ShouldGetPhotoStringFromRawInput()
         {
-            Search search = new Search();
-
-            string outputString = search.GetPhotoOrAlbum("p53");
+            string outputString = _search.GetPhotoOrAlbum("p53");
 
             outputString.Should().Contain("[53] soluta et harum aliquid officiis ab omnis consequatur");
         }
@@ -32,9 +36,7 @@ namespace SearchTests
         [TestMethod]
         public void ShouldGetPhotoAlbumName()
         {
-            Search search = new Search();
-
-            string outputString = search.GetPhotoOrAlbum("a3");
+            string outputString = _search.GetPhotoOrAlbum("a3");
 
             outputString.Should().Contain("photo-album 3");
         }
